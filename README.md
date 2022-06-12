@@ -1,2 +1,2 @@
-# Primer WareHouse Management System.
+# Golden Decorations Management System.
 
