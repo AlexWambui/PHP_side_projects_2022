@@ -1,0 +1,169 @@
+$golden_color: #FCC201;
+
+$navbar_width: 14%;
+
+*{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance:textfield;
+    }
+    
+    
+    .linear_gradient{
+        background: linear-gradient(rgba(29, 38, 113, 0.9), rgba(195, 55, 100, 0.9));
+        color: #fff;
+    }
+    .img_linear_gradient_bg{
+        background: #C33764;  /* fallback colour. Make sure this is just one solid colour. */
+        background: -webkit-linear-gradient(rgba(29, 38, 113, 0.6), rgba(159, 48, 83, 0.6)), url("../images/system_images/hero-section.jpg");
+        background: linear-gradient(rgba(29, 38, 113, 0.6), rgba(195, 55, 100, 0.6)), url("../images/system_images/hero-section.jpg"); /* The least supported option. */
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .setup_error{
+        border: 1px solid black;
+        border-radius: 16px;
+        margin-top: 20%;
+        text-align: center;
+        h1{
+                font-size: 2em;
+                color: red;
+        }
+        p{
+                font-size: 1.5em;
+                font-style: italic;
+        }
+    }
+    
+    @media screen and (min-width: 720px){
+        .setup_error{
+            width: 60%;
+            margin: 10% auto auto;
+        }
+    }
+
+    .hero_section{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fafafa;
+        h1{
+            font-size: 2.8em;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        span.golden_color{
+            color: $golden_color;
+        }
+        p.slogan{
+            font-style: italic;
+            font-size: 1.3em;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: underline;
+            color: gold;
+        }
+        a.action_button{
+            border-radius: 32px;
+            padding: 8px 32px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background: linear-gradient(rgba(226, 44, 102, 0.9)); 
+            text-decoration: none;
+        }
+        a.action_button:hover{
+            text-decoration: none;
+            color: #fafafa;
+        }
+    }
+
+    aside{
+        position: relative;
+        position: fixed;
+        height: 100vh;
+        width: $navbar_width;
+        display: block;
+        color: #fafafa;
+        .app_name{
+            width: 95%;
+            margin: auto;
+            color:#fff;
+            text-align: center;
+            padding: 2px;
+            box-shadow: 2px 2px 3px #C33764;
+        }
+        h3{
+            font-size: 1.2em;
+        }
+        ul{
+            padding: 4px;
+        }
+        li{
+            width: 97%;
+            padding: 2px 8px;
+            border-bottom: 1px solid #fff;
+        }
+        a{
+            color: #fff;
+            display: block;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #fafafa;
+        }
+        .login_controls{
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 50px;
+            color: #fff;
+            font-weight: 500;
+        }
+        .login_controls .logout_btn{
+            border: none;
+            background: #ea4c58;
+            color: white;
+            font-weight: bold;
+            border-radius: 32px;
+            padding: 4px 48px;
+        }
+    }
+
+    .main_content{
+        margin-left: $navbar_width;
+    }
+
+    .dashboard{
+        h1{
+            text-align: center;
+        }
+        .statistics{
+            margin-top: 5%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 12px;
+        }
+        .container{
+            border-radius: 16px;
+            background: $golden_color;
+        }
+    }
+    
