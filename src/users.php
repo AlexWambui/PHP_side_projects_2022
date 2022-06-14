@@ -6,8 +6,8 @@ include_once "include/sidenav.php"
 ?>
 <section class="container main_content users">
         <div class="container">
-                <div class="row">
-                        <div class="col mt-3">
+                <div class="row justify-content-center">
+                        <div class="col-10 mt-3">
                                 <?= alert() ?>
                                 <div class="card">
                                 <div class="card-header">
