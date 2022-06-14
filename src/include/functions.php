@@ -165,6 +165,14 @@ function update_record()
     header('location: ./_page.php');
 }
 
+function delete($table_name)
+{
+    global $db_connection;
+    $delete_id = $_REQUEST['delete_id'];
+    $sql_delete = mysqli_prepare($db_connection, "DELETE FROM $table_name WHERE id = '$delete_id' ");
+    mysqli_stmt_execute($sql_delete) or die(mysqli_stmt_error($sql_delete));
+}
+
 function delete_record()
 {
     global $db_connection;
