@@ -11,7 +11,11 @@ include_once "include/sidenav.php"
                         <p>Total Users: <span><?= count_all_rows("users") ?></span></p>
                 </div>
                 <div class="container">
-                        <h1>Orders</h1>
+                        <h1>Services</h1>
+                        <p>Total Services: <span><?= count_all_rows("services") ?></span></p>
+                </div>
+                <div class="container">
+                        <h1>Bookings</h1>
                         <p>Pending orders: <span>20</span></p>
                 </div>
         </div>
