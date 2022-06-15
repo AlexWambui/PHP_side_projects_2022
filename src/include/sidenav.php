@@ -8,7 +8,7 @@
             <li><a href="users.php"><span class="icon-users"></span> Users</a></li>
         <?php endif; ?>
         <li><a href="services.php"><span class="icon-tags"></span> Services</a></li>
-            <li><a href="orders.php"><span class="icon-calendar"></span> Bookings</a></li>
+            <li><a href="bookings.php"><span class="icon-calendar"></span> Bookings</a></li>
             <li><a href="billings.php"><span class="icon-money"></span> Billings</a></li>
     </ul>
     <div class="login_controls">
