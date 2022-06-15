@@ -9,7 +9,11 @@ include_once "include/sidenav.php"
 <section class="container main_content services">
         <div class="container navbar">
                 <div class="navbar_links">
+                        <?php if($_SESSION['user_level'] != 1): ?>
                 <p><?= count_all_rows("services") ?> Service(s)</p>
+                <?php else: ?>
+                        <p>Book a service</p>
+                        <?php endif;?>
                 <div class="form_container">
                 <div class="modal fade text-dark" id="modalAddService" tabindex="-1" role="dialog"
                  aria-labelledby="myModalLabel" aria-hidden="true">
@@ -47,8 +51,10 @@ include_once "include/sidenav.php"
                     </div>
                 </div>
             </div>
+            <?php if($_SESSION['user_level'] != 1): ?>
             <a href="" class="btn btn-success btn-rounded" data-toggle="modal"
                data-target="#modalAddService"><span class="icon-plus"></span> New</a>
+               <?php endif; ?>
                 </div>
                 </div>
         </div>
