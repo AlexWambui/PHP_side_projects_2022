@@ -6,10 +6,12 @@ include_once "include/sidenav.php"
 <section class="container main_content dashboard">
         <h1>Hi <?= $_SESSION['user_first_name'] ?></h1>
         <div class="statistics">
+                <?php if($_SESSION['user_level'] == 3): ?>
                 <div class="container">
                         <h1>Users</h1>
                         <p>Total Users: <span><?= count_all_rows("users") ?></span></p>
                 </div>
+                <?php endif; ?>
                 <div class="container">
                         <h1>Services</h1>
                         <p>Total Services: <span><?= count_all_rows("services") ?></span></p>
