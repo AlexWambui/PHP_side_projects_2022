@@ -71,7 +71,10 @@ include_once "include/sidenav.php"
                         </div>
                         <div class="service_footer">
                                 <?php if($_SESSION['user_level'] != 3): ?>
-                                <button class="action_button">Book</button>
+                                        <form action="book_service.php" method="post">
+                                                <input type="hidden" name="update_id" id="service_id" value="<?= $service['id'] ?>">
+                                                <button class="action_button">Book</button>
+                                        </form>
                                 <?php endif; ?>
                                 <form action="update_service.php" method="post">
                                         <input type="hidden" name="update_id" value="<?= $service['id'] ?>">
