@@ -5,78 +5,60 @@ start_html("Bookings");
 include_once "include/sidenav.php" 
 ?>
 <section class="container main_content bookings">
-        <div class="container navbar">
-                <div class="navbar_links">
-                <p><?= count_all_rows("bookings") ?> Booking(s)</p>
-                <div class="form_container">
-                <div class="modal fade text-dark" id="modalAddBooking" tabindex="-1" role="dialog"
-                 aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title w-100 font-weight-bold">New Booking</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body text-left">
-                        <form action="./bookings.php" method="post" autocomplete="off" enctype="multipart/form-data">
-                                <div class="form-group">
-                                        <label for="service_name">Service Name</label>
-                                        <input type="text" name="service_name" id="service_name" placeholder="Service Name" class="form-control" required autofocus>
+        <div class="container">
+                <div class="row justify-content-center">
+                        <div class="col mt-3">
+                                <?= alert() ?>
+                                <div class="card">
+                                <div class="card-header">
+                                        <div class="row">
+                                        <div class="col">
+                                                <h6>Booking(s)</h6>
+                                        </div>
+                                        </div>
                                 </div>
-                                <div class="form-group">
-                                        <label for="description">Description</label>
-                                        <input type="text" name="description" id="description" placeholder="Description" class="form-control" required>
+                                <div class="card-body">
+                                        <table class="table table-bordered table-hover" id="data_table">
+                                        <thead>
+                                        <tr>
+                                                <th>Service</th>
+                                                <th>Date of Request</th>
+                                                <th>Venue Address</th>
+                                                <th>Actions</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php foreach(fetch_user_bookings() as $booking): ?>
+                                                <tr>
+                                                <td><?= $booking['service_name'] ?></td>
+                                                <td><?= $booking['date_of_request'] ?></td>
+                                                <td><?= $booking['venue_address'] ?></td>
+                                                <td>
+                                                        <div class="row">
+                                                        <div class="col d-flex justify-content-center">
+                                                                <form action="update_booking.php" method="post" class="form-inline">
+                                                                <input type="hidden" name="update_id" value="<?= $booking['id']; ?>">
+                                                                <button class="btn btn-sm" type="submit" name="edit_booking"><span class="text-success table-icons icon-pencil"></span> Update</button>
+                                                                </form>
+                                                        </div>
+                                                        |
+                                                        <div class="col d-flex justify-content-center">
+                                                                <form action="./bookings.php" method="post" class="form-inline">
+                                                                <input type="hidden" name="delete_booking_id" id="delete_booking_id" value="<?= $booking['id'] ?>">
+                                                                <button type="submit" name="delete_user" class="btn btn-sm"><span class="text-danger table_icons icon-trash"></span> Delete</button>
+                                                                </form>
+                                                        </div>
+                                                        </div>
+                                                </td>
+                                                </tr>
+                                        <?php endforeach; ?>
+                                        </tbody>
+                                        </table>
                                 </div>
-                                <div class="form-group">
-                                        <label for="price">Price</label>
-                                        <input type="number" name="price" id="price" placeholder="Price" class="form-control" required>
                                 </div>
-                                <div class="form-group">
-                                        <label for="service_image">Service Image</label>
-                                        <input type="file" accept="image/*" class="form-control-file border" name="service_image" id="service_image" required>
-                                </div>
-                        </div>
-                        <div class="modal-footer d-flex justify-content-center">
-                            <button class="btn btn-success btn-block" name="add_booking">Save</button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <a href="" class="btn btn-success btn-rounded" data-toggle="modal"
-               data-target="#modalAddBooking"><span class="icon-plus"></span> New</a>
-                </div>
-                </div>
-        </div>
-        <div class="container cards">
-        <?php foreach (fetch_all("bookings") as $booking): ?>
-                <div class="card">
-                        <div class="service_image">
-                                <img src="<?= $service['service_image'] ?>" alt="image">
-                        </div>
-                        <div class="service_body">
-                                <p class="name"><?= $service['service_name'] ?></p>
-                                <p class="description"><?= $service['description'] ?></p>
-                                <p class="price">Price: <?= $service['price'] ?> /=</p>
-                        </div>
-                        <div class="service_footer">
-                                <?php if($_SESSION['user_level'] != 3): ?>
-                                <button class="action_button">Book</button>
-                                <?php endif; ?>
-                                <form action="update_service.php" method="post">
-                                        <input type="hidden" name="update_id" value="<?= $service['id'] ?>">
-                                        <button class="btn" type="submit" name="update"><span class="text-success table-icons icon-pencil"></span></button>                                                                                                         
-                                </form>
-                                <form action="./services.php" method="post">
-                                        <input type="hidden" name="delete_id" value="<?= $service['id'] ?>">
-                                        <button class="btn" type="submit" name="delete_service"><span class="text-danger table-icons icon-trash"></span></button>                                                                                                         
-                                </form>
                         </div>
                 </div>
-                <?php endforeach; ?>       
-        </div>
+    </div>
 </section>
 <?php
 data_table();
