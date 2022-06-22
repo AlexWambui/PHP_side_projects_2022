@@ -35,8 +35,8 @@ include_once "include/sidenav.php";
                                                                 </div>
                                                         </div>
                                                         <div class="form-group">
-                                                                <label for="additional_information">Additional Information</label>
-                                                                <input type="text" name="additional_information" id="additional_information" placeholder="Additional Information (Optional)" class="form-control">
+                                                                <label for="units_or_rooms">Units / Rooms</label>
+                                                                <input type="number" name="units_or_rooms" id="units_or_rooms" placeholder="Units or Rooms" class="form-control">
                                                         </div>
                                                         <div class="form-group text-center w-50 m-auto">
                                                                 <button class="btn btn-success btn-block action_button" name="book_service">Book</button>
