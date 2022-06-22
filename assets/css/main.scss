@@ -32,6 +32,13 @@ $navbar_width: 14%;
         background-position: center;
     }
 
+    .action_buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border: 1px solid black;
+    }
+
     .action_button{
         border: none;
         border-radius: 32px;
