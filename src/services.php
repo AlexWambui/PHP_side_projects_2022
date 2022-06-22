@@ -76,6 +76,7 @@ include_once "include/sidenav.php"
                                                 <button class="action_button">Book</button>
                                         </form>
                                 <?php endif; ?>
+                                <?php if($_SESSION['user_level'] == 3): ?>
                                 <form action="update_service.php" method="post">
                                         <input type="hidden" name="update_id" value="<?= $service['id'] ?>">
                                         <button class="btn" type="submit" name="update"><span class="text-success table-icons icon-pencil"></span></button>                                                                                                         
@@ -84,6 +85,7 @@ include_once "include/sidenav.php"
                                         <input type="hidden" name="delete_id" value="<?= $service['id'] ?>">
                                         <button class="btn" type="submit" name="delete_service"><span class="text-danger table-icons icon-trash"></span></button>                                                                                                         
                                 </form>
+                                <?php endif; ?>
                         </div>
                 </div>
                 <?php endforeach; ?>       
