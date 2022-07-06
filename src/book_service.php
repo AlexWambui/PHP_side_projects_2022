@@ -24,7 +24,7 @@ include_once "include/sidenav.php";
                                                                 <div class="col">
                                                                         <div class="form-group">
                                                                                 <label for="date_of_request">Date of Request</label>
-                                                                                <input type="date" name="date_of_request" id="date_of_request" placeholder="Date of Request" class="form-control" required>
+                                                                                <input type="date" name="date_of_request" id="date_of_request" min="<?= date('Y-m-d') ?>" placeholder="Date of Request" class="form-control" required>
                                                                         </div>
                                                                 </div>
                                                                 <div class="col">
