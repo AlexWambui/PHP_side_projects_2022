@@ -20,7 +20,7 @@ include_once "src/include/functions.php";
 <body>
         <section class="hero_section img_linear_gradient_bg">
                 <h1><span class="golden_color">Golden</span> Decorations MS</h1>
-                <p class="slogan">From the smallest details to the grandest event.</p>
+                <p class="slogan">Intelligent design for every lifestyle.</p>
                 <a href="src/_login.php" class="action_button">Login</a>
                 <p>Don't have an account? <a href="src/_signup.php">Signup</a></p>
         </section>
