@@ -1,5 +1,7 @@
 <?php
 include_once "include/_include_authenticated_essentials.php";
+include_once "include/_billings.php";
+include_once "include/_services.php";
 start_html("Dashbaord");
 include_once "include/sidenav.php" 
 ?>
@@ -18,8 +20,31 @@ include_once "include/sidenav.php"
                 </div>
                 <div class="container">
                         <h1>Bookings</h1>
-                        <p>Pending orders: <span>20</span></p>
+                        <?php if($_SESSION['user_level'] == 1): ?>
+                        <p>Total Bookings: <span><?= count_user_bookings() ?></span></p>
+                        <p>Pending: <span><?= count_user_pending_bookings() ?></span></p>
+                        <?php endif; ?>
+                        <?php if($_SESSION['user_level'] != 1): ?>
+                                <p>Total Bookings: <span><?= count_all_rows("bookings") ?></span></p>
+                                <p>Pending: <span><?= count_pending_bookings() ?></span></p>
+                        <?php endif; ?>
                 </div>
+                <?php if($_SESSION['user_level'] == 1): ?>
+        <div class="container">
+                <h1>Billings</h1>
+                <p>Total Billings: <span><?= mysqli_num_rows(fetch_user_billings()) ?></span></p>
+                <p>Amount: <span><?= calculate_user_billing() ?></span></p>
         </div>
+        <?php endif; ?>
+        </div>
+        <hr />
+        <?php if($_SESSION['user_level'] != 1): ?>
+        <div class="stats">
+                <h1>Billings</h1>
+                <p>Total Billings: <span><?= calculate_total_billing() ?></span></p>
+                <p>Paid Billings: <span><?= calculate_total_billing() ?></span></p>
+                <p>Pending Billings: <span><?= calculate_total_billing() ?></span></p>
+        </div>
+        <?php endif; ?>
 </section>
 <?php end_html() ?>
