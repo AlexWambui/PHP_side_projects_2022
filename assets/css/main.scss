@@ -36,13 +36,11 @@ $navbar_width: 14%;
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        border: 1px solid black;
     }
 
     .action_button{
         border: none;
         border-radius: 32px;
-        background: green;
         color: #fafafa;
         font-weight: bold;
         padding: 4px 32px;
@@ -119,6 +117,7 @@ $navbar_width: 14%;
         width: $navbar_width;
         display: block;
         color: #fafafa;
+        background: linear-gradient(rgba(29, 38, 113, 0.9), rgba(195, 55, 100, 0.9));
         .app_name{
             width: 95%;
             margin: auto;
@@ -188,6 +187,27 @@ $navbar_width: 14%;
             border-radius: 16px;
             background: $golden_color;
         }
+        .stats{
+            $measurement: 300px;
+            border: 5px solid $golden_color;
+            height: $measurement;
+            width: $measurement;
+            margin: auto;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2%;
+            h1{
+                border-bottom: 2px solid $golden_color;
+                padding-bottom: 4px;
+            }
+            p span{
+                font-style: italic;
+                font-weight: 600;
+            }
+        }
     }
 
     .services{
@@ -247,6 +267,15 @@ $navbar_width: 14%;
             }
         }
     }
+
+    .billings{
+        .table_actions{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 8px;
+        }
+    }
+
     @media screen and (max-width: 990px) {
         .services{
             .cards{
@@ -271,5 +300,50 @@ $navbar_width: 14%;
             .cards{
                 grid-template-columns: 1fr;
             }
+        }
+    }
+
+    .bookings_print_out{
+        width: 80%;
+        margin: 3% auto;
+        .print_booking{
+            width: 90%;
+        }
+        .print_head{
+            h1{
+                border-bottom: 2px solid #000;
+                text-align: center;
+                padding-bottom: 8px;
+                font-size: 1.5em;
+            }
+            .print_head_details{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid gray;
+                margin-bottom: 2%;
+            }
+        }
+        .print_body{
+            display: flex;
+            justify-content: space-between;
+            p span{
+                font-style: italic;
+                font-weight: 600;
+            }
+            .payment_status{
+                text-align: center;
+                transform: rotate(-8deg);
+            }
+            .not_paid{
+                border: 4px solid red;
+            }
+            .paid{
+                border: 4px solid green;
+            }
+        }
+        .print_footer{
+            border-top: 1px solid #000;
+            text-align: center;
+            padding-top: 2%;
         }
     }
