@@ -1,15 +1,15 @@
 <?php
-function fetch_this_service(): mysqli_result|bool
-{
+function fetch_this_service(): mysqli_result|bool {
     global $db_connection;
     $id = $_REQUEST['update_id'];
 
-    $fetched_records = $db_connection->query("SELECT * FROM services WHERE id = '$id' ") or die($db_connection);
+    $fetched_records = $db_connection->query(
+        "SELECT * FROM services WHERE id = '$id' 
+    ") or die($db_connection);
     return $fetched_records;
 }
 
-function add_service()
-{
+function add_service() {
     global $db_connection;
 
     $service_name = $_REQUEST['service_name'];
@@ -24,8 +24,7 @@ function add_service()
     header('location: ./services.php');
 }
 
-function update_service()
-{
+function update_service() {
     global $db_connection;
     $id = $_REQUEST['update_service_id'];
     $service_name = $_REQUEST['service_name'];
@@ -37,8 +36,7 @@ function update_service()
     header('location: ./services.php');
 }
 
-function delete_service()
-{
+function delete_service() {
     delete('services');
     setcookie("success", "Service has been deleted 😮.", time() + 2);
     header('location: ./services.php');
@@ -54,8 +52,17 @@ function interpret_approval_status($approval_status){
     }
 }
 
-function book_service()
-{
+function approval_status_class($approval_status){
+    if($approval_status == 0){
+        echo "text-warning";
+}else if ($approval_status == 1){
+        echo "text-success";
+}else{
+        echo "text-danger";
+}
+}
+
+function book_service() {
     global $db_connection;
     $customer_id = $_SESSION['user_id'];
     $service_id = $_REQUEST['service_id'];
@@ -70,26 +77,45 @@ function book_service()
     header('location: ./bookings.php');
 }
 
-function fetch_user_bookings(): mysqli_result|bool
-{
+function update_booking() {
+    global $db_connection;
+    $id = $_REQUEST['update_booking_id'];
+    $date_of_request = $_REQUEST['date_of_request'];
+    $venue_address = $_REQUEST['venue_address'];
+    $units_or_rooms = $_REQUEST['units_or_rooms'];
+    $approval_status = $_REQUEST['approval_status'];
+    $comment = $_REQUEST['comment'];
+
+    $sql = $db_connection->query("UPDATE bookings SET `date_of_request` = '$date_of_request', `venue_address` = '$venue_address', `units_or_rooms` = '$units_or_rooms', `approval_status` = '$approval_status', `comment` = '$comment' WHERE bookings.id = '$id' ") or die($db_connection);
+    setcookie('success', 'Booking has been updated!', time() + 2);
+    header('location: ./bookings.php');
+}
+
+function delete_booking() {
+    delete('bookings');
+    setcookie("success", "Booking has been deleted 😮.", time() + 2);
+    header('location: ./bookings.php');
+}
+
+function fetch_user_bookings(): mysqli_result|bool {
     global $db_connection;
     $id = $_SESSION['user_id'];
 
     $fetched_records = $db_connection->query(
-        "SELECT users.id AS user_id, users.*, services.id AS service_id, services.*, bookings.*
+        "SELECT users.id AS user_id, users.*, services.id AS service_id, services.*, bookings.id AS booking_id, bookings.*
         FROM bookings
         LEFT JOIN services
         ON services.id = bookings.service_id
         LEFT JOIN users
         ON users.id = bookings.customer_id 
-        WHERE users.id = '$id' ") 
+        WHERE users.id = '$id' 
+    ") 
         or die($db_connection
     );
     return $fetched_records;
 }
 
-function fetch_all_bookings(): mysqli_result|bool
-{
+function fetch_all_bookings(): mysqli_result|bool {
     global $db_connection;
 
     $fetched_records = $db_connection->query(
@@ -98,12 +124,36 @@ function fetch_all_bookings(): mysqli_result|bool
         LEFT JOIN services
         ON services.id = bookings.service_id
         LEFT JOIN users
-        ON users.id = bookings.customer_id") 
-        or die($db_connection
-    );
+        ON users.id = bookings.customer_id
+    ") 
+    or die($db_connection);
     return $fetched_records;
 }
 
+function fetch_this_booking(): mysqli_result|bool {
+    global $db_connection;
+    $id = $_REQUEST['update_id'];
+
+    $fetched_records = $db_connection->query(
+        "SELECT bookings.id AS booking_id, bookings.*, users.*, services.*
+        FROM bookings
+        LEFT JOIN users
+        ON users.id = bookings.customer_id
+        LEFT JOIN services
+        ON services.id = bookings.service_id
+        WHERE bookings.id = '$id' 
+    ") 
+    or die($db_connection);
+    return $fetched_records;
+}
+
+function count_user_pending_bookings(): int{
+    global $db_connection;
+    $id = $_SESSION['user_id'];
+
+    $fetched_records = $db_connection->query("SELECT * FROM bookings WHERE approval_status = 0 AND customer_id = '$id' ") or die($db_connection);
+    return mysqli_num_rows($fetched_records);
+}
 
 function count_pending_bookings(): int{
     global $db_connection;
