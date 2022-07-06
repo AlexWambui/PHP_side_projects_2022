@@ -1,4 +1,4 @@
-<aside class="sidenav img_linear_gradient_bg">
+<aside class="sidenav">
     <div class="app_name">
         <h3><?= $app_name ?></h3>
     </div>
