@@ -112,17 +112,26 @@ input[type=number] {
   font-size: 1.3em;
 }
 
-.hero_section a {
+.hero_section .app_details {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.hero_section .app_logins {
+  text-align: center;
+}
+
+.hero_section .app_logins a {
   color: white;
   text-decoration: none;
 }
 
-.hero_section a:hover {
+.hero_section .app_logins a:hover {
   text-decoration: underline;
   color: gold;
 }
 
-.hero_section a.action_button {
+.hero_section .app_logins a.action_button {
   border-radius: 32px;
   padding: 8px 32px;
   font-size: 1.2em;
@@ -130,11 +139,41 @@ input[type=number] {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(226, 44, 102, 0.9)));
   background: linear-gradient(rgba(226, 44, 102, 0.9));
   text-decoration: none;
+  margin-bottom: 1.5%;
 }
 
-.hero_section a.action_button:hover {
+.hero_section .app_logins a.action_button:hover {
   text-decoration: none;
   color: #fafafa;
+}
+
+.hero_section .homepage_stats {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+  margin-top: 2%;
+}
+
+.hero_section .homepage_stats .container {
+  background: #FCC201;
+  border-radius: 16px;
+}
+
+.hero_section .homepage_stats .container h1 {
+  font-size: 1.4em;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+}
+
+.hero_section .homepage_stats .container p {
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: unset;
 }
 
 aside {
