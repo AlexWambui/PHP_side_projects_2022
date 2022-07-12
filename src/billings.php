@@ -3,6 +3,7 @@ include_once "include/_include_authenticated_essentials.php";
 include_once "include/_billings.php";
 include_once "include/_services.php";
 if(isset($_POST['billing_paid'])) billing_paid();
+if(isset($_POST['billing_pending'])) billing_pending();
 start_html("Billings");
 include_once "include/sidenav.php"
 ?>
@@ -19,15 +20,15 @@ include_once "include/sidenav.php"
                                     <h6>Billings(s)</h6>
                                 </div>
                                 <div class="col text-right">
-                                    <h6>Amount: <?= calculate_user_billing() ?></h6>
+                                    <h6>Amount: <?= calculate_total(fetch_user_billings()) ?></h6>
                                 </div>
                             <?php endif; ?>
                             <?php if ($_SESSION['user_level'] != 1): ?>
                                 <div class="col">
-                                    <h6><?= count_all_rows("bookings") ?> Billings(s)</h6>
+                                    <h6><?= mysqli_num_rows(fetch_approved_bookings()) ?> Billings(s)</h6>
                                 </div>
                                 <div class="col text-right">
-                                    <h6>Amount: <?= calculate_total_billing() ?></h6>
+                                    <h6>Amount: <?= calculate_total(fetch_billings()) ?></h6>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -71,8 +72,12 @@ include_once "include/sidenav.php"
                                 <td><?= $booking['units_or_rooms'] ?></td>
                                 <td><?= $booking['price'] ?></td>
                                 <td><?= $booking['price'] * $booking['units_or_rooms'] ?></td>
-                                <td><?php $payment_status = $booking['payment_status'];
-                                    interpret_payment_status($payment_status); ?></td>
+                                <td class="<?php if($booking['payment_status'] == 0) echo "text-danger"; else echo "text-success" ?>">
+                                    <?php 
+                                    $payment_status = $booking['payment_status'];
+                                    interpret_payment_status($payment_status); 
+                                    ?>
+                                </td>
                                 <td>
                                     <div class="row">
                                         <div class="col d-flex justify-content-center">
@@ -89,7 +94,7 @@ include_once "include/sidenav.php"
                                 }
                                 }
                                 if ($_SESSION['user_level'] != 1){
-                                foreach (fetch_all_bookings() as $booking){
+                                foreach (fetch_approved_bookings() as $booking){
                                 ?>
                             <tr>
                                 <td><?= $booking['first_name'] ?> <?= $booking['last_name'] ?></td>
@@ -99,7 +104,7 @@ include_once "include/sidenav.php"
                                 <td><?= $booking['units_or_rooms'] ?></td>
                                 <td><?= $booking['price'] ?></td>
                                 <td><?= $booking['price'] * $booking['units_or_rooms'] ?></td>
-                                <td>
+                                <td class="<?php if($booking['payment_status'] == 0) echo "text-danger"; else echo "text-success" ?>">
                                     <?php
                                     $payment_status = $booking['payment_status'];
                                     interpret_payment_status($payment_status);
@@ -108,10 +113,10 @@ include_once "include/sidenav.php"
                                 <td>
                                     <div class="table_actions">
                                         <div class="action">
-                                            <form action="booking_details.php" method="post" class="form-inline">
+                                            <form action="billings.php" method="post" class="form-inline">
                                                 <input type="hidden" name="update_id" value="<?= $booking['id']; ?>">
                                                 <button class="btn btn-sm btn-warning" type="submit"
-                                                        name="edit_booking"><span
+                                                        name="billing_pending"><span
                                                             class="text-dark table-icons">Pending</span></button>
                                             </form>
                                         </div>
