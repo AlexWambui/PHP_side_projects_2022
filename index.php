@@ -19,10 +19,15 @@ include_once "src/include/functions.php";
 </head>
 <body>
         <section class="hero_section img_linear_gradient_bg">
-                <h1><span class="golden_color">Golden</span> Decorations MS</h1>
-                <p class="slogan">Intelligent design for every lifestyle.</p>
-                <a href="src/_login.php" class="action_button">Login</a>
-                <p>Don't have an account? <a href="src/_signup.php">Signup</a></p>
+                <div class="app_details">
+                        <h1><span class="golden_color">Golden</span> Decorations MS</h1>
+                        <p class="slogan">Intelligent design for every lifestyle.</p>
+                </div>
+
+                <div class="app_logins">
+                        <a href="src/_login.php" class="action_button">Login</a>
+                        <p>Don't have an account? <a href="src/_signup.php">Signup</a></p>
+                </div>
 
                 <div class="homepage_stats">
                         <div class="container">
