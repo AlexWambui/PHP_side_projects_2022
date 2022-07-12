@@ -230,7 +230,7 @@ aside .login_controls .logout_btn {
 }
 
 .dashboard .stats {
-  border: 5px solid #FCC201;
+  border: 10px solid #FCC201;
   height: 300px;
   width: 300px;
   margin: auto;
