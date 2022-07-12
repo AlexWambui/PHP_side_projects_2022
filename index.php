@@ -23,6 +23,21 @@ include_once "src/include/functions.php";
                 <p class="slogan">Intelligent design for every lifestyle.</p>
                 <a href="src/_login.php" class="action_button">Login</a>
                 <p>Don't have an account? <a href="src/_signup.php">Signup</a></p>
+
+                <div class="homepage_stats">
+                        <div class="container">
+                                <p><?= count_all_rows("users") ?></p>
+                                <h1>Users</h1>
+                        </div>
+                        <div class="container">
+                                <p><?= count_all_rows("services") ?></p>
+                                <h1>Services</h1>
+                        </div>
+                        <div class="container">
+                                <p><?= count_all_rows("bookings") ?></p>
+                                <h1>Bookings</h1>
+                        </div>
+                </div>
         </section>
 </body>
 </html>
