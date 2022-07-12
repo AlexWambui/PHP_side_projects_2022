@@ -33,7 +33,7 @@ include_once "include/sidenav.php"
         <div class="container">
                 <h1>Billings</h1>
                 <p>Total Billings: <span><?= mysqli_num_rows(fetch_user_billings()) ?></span></p>
-                <p>Amount: <span><?= calculate_user_billing() ?></span></p>
+                <p>Amount: <span><?= calculate_total(fetch_user_billings()) ?></span></p>
         </div>
         <?php endif; ?>
         </div>
@@ -41,9 +41,9 @@ include_once "include/sidenav.php"
         <?php if($_SESSION['user_level'] != 1): ?>
         <div class="stats">
                 <h1>Billings</h1>
-                <p>Total Billings: <span><?= calculate_total_billing() ?></span></p>
-                <p>Paid Billings: <span><?= calculate_total_billing() ?></span></p>
-                <p>Pending Billings: <span><?= calculate_total_billing() ?></span></p>
+                <p>Total Billings: <span><?= calculate_total(fetch_billings()) ?></span></p>
+                <p>Paid Billings: <span class="text-success"><?= calculate_total(fetch_billing_paid()) ?></span></p>
+                <p>Pending Billings: <span class="text-danger"><?= calculate_total(fetch_billing_not_paid()) ?></span></p>
         </div>
         <?php endif; ?>
 </section>
