@@ -70,13 +70,13 @@ include_once "include/sidenav.php"
                                 <p class="price">Price: <?= $service['price'] ?> /=</p>
                         </div>
                         <div class="service_footer">
-                                <?php if($_SESSION['user_level'] != 3): ?>
+                                <?php if($_SESSION['user_level'] == 1): ?>
                                         <form action="book_service.php" method="post">
                                                 <input type="hidden" name="update_id" id="service_id" value="<?= $service['id'] ?>">
                                                 <button class="action_button btn btn-success">Book</button>
                                         </form>
                                 <?php endif; ?>
-                                <?php if($_SESSION['user_level'] == 3): ?>
+                                <?php if($_SESSION['user_level'] != 1): ?>
                                 <form action="update_service.php" method="post">
                                         <input type="hidden" name="update_id" value="<?= $service['id'] ?>">
                                         <button class="btn" type="submit" name="update"><span class="text-success table-icons icon-pencil"></span></button>                                                                                                         
