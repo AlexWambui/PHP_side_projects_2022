@@ -18,14 +18,14 @@ start_html("Login")
                     <form action="./_login.php" method="post" autocomplete="off">
                         <div class="form-group">
                             <label for="email_address">Email Address</label>
-                            <input type="email" name="email_address" id="email_address" placeholder="Email Address" class="form-control" autofocus required>
+                            <input type="email" name="email_address" id="email_address" placeholder="Email Address" class="form-control" required autofocus>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-success btn-block" name="submit_btn">Login</button>
+                            <button class="btn btn-success btn-block" name="submit_btn">Signup</button>
                             <p class="text-center mt-2">Don't have an Account? <a href="_signup.php" class="text-light">Signup</a></p>
                         </div>
                     </form>
