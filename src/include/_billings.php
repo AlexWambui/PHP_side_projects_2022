@@ -21,7 +21,7 @@ function fetch_user_billings(): mysqli_result|bool
         LEFT JOIN services
         ON services.id = bookings.service_id
         LEFT JOIN users
-        ON users.id = bookings.customer_id 
+        ON users.id = bookings.user_id 
         WHERE users.id = '$id' 
     ") 
         or die($db_connection

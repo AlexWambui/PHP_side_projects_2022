@@ -107,7 +107,7 @@ function fetch_user_bookings(): mysqli_result|bool {
         LEFT JOIN services
         ON services.id = bookings.service_id
         LEFT JOIN users
-        ON users.id = bookings.customer_id 
+        ON users.id = bookings.user_id 
         WHERE users.id = '$id' 
     ") 
         or die($db_connection
@@ -151,7 +151,7 @@ function count_user_pending_bookings(): int{
     global $db_connection;
     $id = $_SESSION['user_id'];
 
-    $fetched_records = $db_connection->query("SELECT * FROM bookings WHERE approval_status = 0 AND customer_id = '$id' ") or die($db_connection);
+    $fetched_records = $db_connection->query("SELECT * FROM bookings WHERE approval_status = 0 AND user_id = '$id' ") or die($db_connection);
     return mysqli_num_rows($fetched_records);
 }
 
