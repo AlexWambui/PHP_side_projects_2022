@@ -25,7 +25,7 @@ start_html("Login")
                             <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-success btn-block" name="submit_btn">Signup</button>
+                            <button class="btn btn-success btn-block" name="submit_btn">Login</button>
                             <p class="text-center mt-2">Don't have an Account? <a href="_signup.php" class="text-light">Signup</a></p>
                         </div>
                     </form>
