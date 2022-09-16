@@ -70,7 +70,7 @@ function book_service() {
     $venue_address = $_REQUEST['venue_address'];
     $units_or_rooms = $_REQUEST['units_or_rooms'];
 
-    $sql = mysqli_prepare($db_connection, "INSERT INTO bookings (`customer_id`, `service_id`, `date_of_request`, `venue_address`, `units_or_rooms`) VALUES (?,?,?,?,?)");
+    $sql = mysqli_prepare($db_connection, "INSERT INTO bookings (`user_id`, `service_id`, `date_of_request`, `venue_address`, `units_or_rooms`) VALUES (?,?,?,?,?)");
     mysqli_stmt_bind_param($sql, "iissi", $customer_id, $service_id, $date_of_request, $venue_address, $units_or_rooms);
     mysqli_stmt_execute($sql) or die(mysqli_error($db_connection));
     setcookie('success', 'Booked!', time() + 2);
@@ -124,7 +124,7 @@ function fetch_all_bookings(): mysqli_result|bool {
         LEFT JOIN services
         ON services.id = bookings.service_id
         LEFT JOIN users
-        ON users.id = bookings.customer_id
+        ON users.id = bookings.user_id
     ") 
     or die($db_connection);
     return $fetched_records;
@@ -138,7 +138,7 @@ function fetch_this_booking(): mysqli_result|bool {
         "SELECT bookings.id AS booking_id, bookings.*, users.*, services.*
         FROM bookings
         LEFT JOIN users
-        ON users.id = bookings.customer_id
+        ON users.id = bookings.user_id
         LEFT JOIN services
         ON services.id = bookings.service_id
         WHERE bookings.id = '$id' 

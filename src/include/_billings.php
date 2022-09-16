@@ -40,7 +40,7 @@ function fetch_billings(): mysqli_result|bool
         LEFT JOIN services
         ON services.id = bookings.service_id
         LEFT JOIN users
-        ON users.id = bookings.customer_id 
+        ON users.id = bookings.user_id 
     ") 
         or die($db_connection
     );
@@ -57,7 +57,7 @@ function fetch_approved_bookings(){
         LEFT JOIN services
         ON services.id = bookings.service_id
         LEFT JOIN users
-        ON users.id = bookings.customer_id 
+        ON users.id = bookings.user_id 
         WHERE approval_status = 1
     ") 
         or die($db_connection
