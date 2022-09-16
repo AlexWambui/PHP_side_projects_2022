@@ -8,7 +8,7 @@ $app_full_name = "Golden Decorations MS";
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "db_golden_decorations";
+$database = "db_golden_decorations_MS";
 $db_connection = mysqli_connect($host, $user, $password, $database);
 if (!$db_connection){
     header('location: src/_setup_error.php');
@@ -63,7 +63,7 @@ function signup()
         mysqli_stmt_bind_param($sql, "sssssi", $first_name, $last_name, $email, $phone, $password, $user_level);
         mysqli_stmt_execute($sql) or die(mysqli_stmt_error($sql));
         setcookie('success', 'Registered. You can now login!', time() + 2);
-        header('location: ./_signup.php');
+        header('location: ./_login.php');
     }
 }
 
