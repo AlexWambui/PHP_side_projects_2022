@@ -52,7 +52,7 @@ include_once "include/sidenav.php"
                                                         <div class="col d-flex justify-content-center">
                                                                 <form action="./users.php" method="post" class="form-inline">
                                                                 <input type="hidden" name="delete_user_id" id="delete_user_id" value="<?= $users['id'] ?>">
-                                                                <button type="submit" name="delete_user" class="btn btn-sm"><span class="text-danger table_icons icon-trash"></span> Delete</button>
+                                                                <button type="submit" name="delete_user" class="btn btn-sm"><span class="text-danger table_icons icon-trash" onclick="return confirm_delete()"></span> Delete</button>
                                                                 </form>
                                                         </div>
                                                         </div>
@@ -67,6 +67,11 @@ include_once "include/sidenav.php"
                 </div>
     </div>
 </section>
+<script>
+        function confirm_delete(){
+                return confirm('Are you sure you want to delete this record?');              
+        }
+</script>
 <?php
 data_table();
 end_html();
