@@ -22,7 +22,8 @@ start_html("Login")
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+                            <input type="password" name="password" id="password" placeholder="Password" class="form-control password" required>
+                            <span id="eye" class="icon icon-eye" onclick="toggle_password()"></span>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-success btn-block" name="submit_btn">Login</button>
@@ -34,4 +35,5 @@ start_html("Login")
         </div>
     </div>
 </section>
+<script src="../assets/js/toggle_password.js"></script>
 <?php end_html() ?>
