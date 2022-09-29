@@ -381,3 +381,14 @@ $navbar_width: 14%;
             padding-top: 2%;
         }
     }
+
+    .password{
+        position: relative;    
+    }
+    span.icon-eye{
+        color: green;
+        cursor: pointer;
+        position: absolute;
+        margin-top: -27px;
+        right: 27px;
+    } 

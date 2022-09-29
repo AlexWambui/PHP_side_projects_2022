@@ -1,8 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input::-webkit-outer-spin-button,
@@ -17,33 +16,22 @@ input[type=number] {
 }
 
 .linear_gradient {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 38, 113, 0.9)), to(rgba(195, 55, 100, 0.9)));
   background: linear-gradient(rgba(29, 38, 113, 0.9), rgba(195, 55, 100, 0.9));
   color: #fff;
 }
 
 .img_linear_gradient_bg {
-  background: #C33764;
-  /* fallback colour. Make sure this is just one solid colour. */
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 38, 113, 0.6)), to(rgba(195, 55, 100, 0.6))), url("../images/system_images/hero-section.jpg");
-  background: linear-gradient(rgba(29, 38, 113, 0.6), rgba(195, 55, 100, 0.6)), url("../images/system_images/hero-section.jpg");
-  /* The least supported option. */
+  background: #C33764; /* fallback colour. Make sure this is just one solid colour. */
+  background: linear-gradient(rgba(29, 38, 113, 0.6), rgba(195, 55, 100, 0.6)), url("../images/system_images/hero-section.jpg"); /* The least supported option. */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .action_buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .action_button {
@@ -60,12 +48,10 @@ input[type=number] {
   margin-top: 20%;
   text-align: center;
 }
-
 .setup_error h1 {
   font-size: 2em;
   color: red;
 }
-
 .setup_error p {
   font-size: 1.5em;
   font-style: italic;
@@ -77,97 +63,71 @@ input[type=number] {
     margin: 10% auto auto;
   }
 }
-
 .hero_section {
   width: 100vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #fafafa;
 }
-
 .hero_section h1 {
   font-size: 2.8em;
   font-weight: bold;
   text-decoration: underline;
 }
-
 .hero_section span.golden_color {
   color: #FCC201;
 }
-
 .hero_section p.slogan {
   font-style: italic;
   font-size: 1.3em;
 }
-
 .hero_section .app_details {
   text-align: center;
   margin-bottom: 2%;
 }
-
 .hero_section .app_logins {
   text-align: center;
 }
-
 .hero_section .app_logins a {
   color: white;
   text-decoration: none;
 }
-
 .hero_section .app_logins a:hover {
   text-decoration: underline;
   color: gold;
 }
-
 .hero_section .app_logins a.action_button {
   border-radius: 32px;
   padding: 8px 32px;
   font-size: 1.2em;
   font-weight: bold;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(226, 44, 102, 0.9)));
   background: linear-gradient(rgba(226, 44, 102, 0.9));
   text-decoration: none;
   margin-bottom: 1.5%;
 }
-
 .hero_section .app_logins a.action_button:hover {
   text-decoration: none;
   color: #fafafa;
 }
-
 .hero_section .homepage_stats {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 12px;
   margin-top: 2%;
 }
-
 .hero_section .homepage_stats .container {
   background: #FCC201;
   border-radius: 16px;
 }
-
 .hero_section .homepage_stats .container h1 {
   font-size: 1.4em;
   text-align: center;
   color: black;
   text-decoration: none;
 }
-
 .hero_section .homepage_stats .container p {
   color: black;
   text-align: center;
@@ -183,44 +143,35 @@ aside {
   width: 14%;
   display: block;
   color: #fafafa;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 38, 113, 0.9)), to(rgba(195, 55, 100, 0.9)));
   background: linear-gradient(rgba(29, 38, 113, 0.9), rgba(195, 55, 100, 0.9));
 }
-
 aside .app_name {
   width: 95%;
   margin: auto;
   color: #fff;
   text-align: center;
   padding: 2px;
-  -webkit-box-shadow: 2px 2px 3px #C33764;
-          box-shadow: 2px 2px 3px #C33764;
+  box-shadow: 2px 2px 3px #C33764;
 }
-
 aside h3 {
   font-size: 1.2em;
 }
-
 aside ul {
   padding: 4px;
 }
-
 aside li {
   width: 97%;
   padding: 2px 8px;
   border-bottom: 1px solid #fff;
 }
-
 aside a {
   color: #fff;
   display: block;
 }
-
 aside a:hover {
   text-decoration: none;
   color: #fafafa;
 }
-
 aside .login_controls {
   position: absolute;
   width: 100%;
@@ -229,11 +180,9 @@ aside .login_controls {
   color: #fff;
   font-weight: 500;
 }
-
 aside .login_controls li {
   border: none;
 }
-
 aside .login_controls .logout_btn {
   border: none;
   background: #e83645;
@@ -253,48 +202,32 @@ aside .login_controls .logout_btn {
   font-size: 1.5em;
   padding-top: 3%;
 }
-
 .dashboard .statistics {
   margin-top: 3%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 12px;
 }
-
 .dashboard .container {
   border-radius: 16px;
   background: #FCC201;
 }
-
 .dashboard .stats {
   border: 10px solid #FCC201;
   height: 300px;
   width: 300px;
   margin: auto;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2%;
 }
-
 .dashboard .stats h1 {
   border-bottom: 2px solid #FCC201;
   padding-bottom: 4px;
 }
-
 .dashboard .stats p span {
   font-style: italic;
   font-weight: 600;
@@ -303,178 +236,136 @@ aside .login_controls .logout_btn {
 .services {
   padding-top: 0.5%;
 }
-
 .services .navbar {
   background: #000;
   color: #fafafa;
   font-weight: bold;
   border-radius: 32px;
 }
-
 .services .navbar .navbar_links {
   width: 95%;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .services .navbar a:hover {
   text-decoration: none;
 }
-
 .services .cards {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 12px;
   padding-top: 0.5%;
 }
-
 .services .cards .card {
   height: 350px;
 }
-
 .services .cards .card .service_image {
   height: 50%;
 }
-
 .services .cards .card .service_image img {
   width: 100%;
   height: 100%;
 }
-
 .services .cards .card .service_body {
   padding: 5%;
 }
-
 .services .cards .card .service_body p {
   margin: unset;
 }
-
 .services .cards .card .service_body .name {
   font-weight: bold;
   margin-bottom: 6px;
   color: green;
   font-size: 1em;
 }
-
 .services .cards .card .service_body .description {
   font-style: italic;
   margin-bottom: 4px;
 }
-
 .services .cards .card .service_footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 4px;
 }
 
 .billings .table_actions {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 8px;
 }
 
 @media screen and (max-width: 990px) {
   .services .cards {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
 @media screen and (max-width: 776px) {
   .services .cards {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
-
 @media screen and (max-width: 578px) {
   .sidenav {
     visibility: hidden;
   }
   .services .cards {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
-
 .bookings_print_out {
   width: 80%;
   margin: 3% auto;
 }
-
 .bookings_print_out .print_booking {
   width: 90%;
 }
-
 .bookings_print_out .print_head h1 {
   border-bottom: 2px solid #000;
   text-align: center;
   padding-bottom: 8px;
   font-size: 1.5em;
 }
-
 .bookings_print_out .print_head .print_head_details {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   border-bottom: 1px solid gray;
   margin-bottom: 2%;
 }
-
 .bookings_print_out .print_body {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .bookings_print_out .print_body p span {
   font-style: italic;
   font-weight: 600;
 }
-
 .bookings_print_out .print_body .payment_status {
   text-align: center;
-  -webkit-transform: rotate(-8deg);
-          transform: rotate(-8deg);
+  transform: rotate(-8deg);
 }
-
 .bookings_print_out .print_body .not_paid {
   border: 4px solid red;
 }
-
 .bookings_print_out .print_body .paid {
   border: 4px solid green;
 }
-
 .bookings_print_out .print_footer {
   border-top: 1px solid #000;
   text-align: center;
   padding-top: 2%;
 }
-/*# sourceMappingURL=main.css.map */
+
+.password {
+  position: relative;
+}
+
+span.icon-eye {
+  color: green;
+  cursor: pointer;
+  position: absolute;
+  margin-top: -27px;
+  right: 27px;
+}/*# sourceMappingURL=main.css.map */
