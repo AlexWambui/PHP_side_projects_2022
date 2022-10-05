@@ -23,16 +23,16 @@ function start_html($page_title)
 }
 
 function data_table(){
-        ?>
+    ?>
         <script src="../assets/js/jquery.min.js"></script>
         <script src="../assets/js/jquery.dataTables.min.js"></script>
         <script src="../assets/js/data_table.js"></script>
-        <?php
-    }
+    <?php
+}
 
 function end_html(){
-        ?>
+    ?>
         </body>
         </html>
-        <?php
-    }
+    <?php
+}
