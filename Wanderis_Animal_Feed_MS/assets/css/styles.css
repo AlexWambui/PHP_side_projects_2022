@@ -87,6 +87,9 @@ input[type=number] {
   font-size: 0.9em;
   text-transform: uppercase;
 }
+.Home .home_navbar .navbar .nav_links ul li a:hover {
+  border-bottom: 2px solid #fafafa;
+}
 .Home .hero_section {
   width: 100vw;
   height: 85vh;
@@ -206,7 +209,7 @@ aside ul li a {
 }
 aside ul li a:hover {
   text-decoration: none;
-  margin-left: 12px;
+  margin-left: 6px;
   color: greenyellow;
 }
 aside .account_details {
@@ -265,4 +268,65 @@ main {
 }
 .Dashboard .container .statistics .statistic span {
   font-size: 2.5em;
+}
+
+.Products .container .nav .nav_links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  width: 82vw;
+  height: 8vh;
+  margin: auto;
+  padding: 4px 6px;
+  overflow: hidden;
+  background: black;
+  border-radius: 6px;
+  color: #fafafa;
+  position: fixed;
+}
+.Products .container .nav .nav_links p {
+  font-weight: bold;
+}
+.Products .container .products_list {
+  margin-top: 8vh;
+}
+.Products .container .products_list h1 {
+  font-size: 1.2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: green;
+}
+.Products .container .products_list .category {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-gap: 15px;
+  margin-bottom: 15px;
+}
+.Products .container .products_list .category .product_card {
+  border-radius: 8px;
+  box-shadow: 3px 4px 16px black;
+}
+.Products .container .products_list .category .product_card .image {
+  border-radius: 8px;
+  text-align: center;
+}
+.Products .container .products_list .category .product_card .image img {
+  height: 130px;
+}
+.Products .container .products_list .category .product_card .card_body {
+  padding: 6px 8px;
+}
+.Products .container .products_list .category .product_card .card_body h1 {
+  font-size: 1em;
+  text-align: left;
+  text-transform: unset;
+  color: #000000;
+}
+.Products .container .products_list .category .product_card .footer {
+  border-top: 1px solid #000000;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4px 8px;
 }/*# sourceMappingURL=styles.css.map */

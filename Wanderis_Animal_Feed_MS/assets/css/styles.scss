@@ -84,6 +84,9 @@
                                 font-size: 0.9em;
                                 text-transform: uppercase;
                             }
+                            a:hover{
+                                border-bottom: 2px solid #fafafa;
+                            }
                         }
                     }
                 }
@@ -220,7 +223,7 @@ aside{
             }
             a:hover{
                 text-decoration: none;
-                margin-left: 12px;
+                margin-left: 6px;
                 color: greenyellow;
             }
         }
@@ -280,6 +283,74 @@ main{
                 }
                 span{
                     font-size: 2.5em;
+                }
+            }
+        }
+    }
+}
+
+.Products{
+    .container{
+        $nav_height: 8vh;
+        .nav{  
+            .nav_links{                
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                position: fixed;
+                width: 82vw;
+                height: $nav_height;
+                margin: auto;
+                padding: 4px 6px;
+                overflow: hidden;
+                background: black;
+                border-radius: 6px;
+                color: #fafafa;
+                position: fixed;
+                p{
+                    font-weight: bold;
+                }
+            }
+        }
+        .products_list{
+            margin-top: $nav_height;
+            h1{
+                font-size: 1.2em;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: green;
+            }
+            .category{
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+                grid-gap: 15px;
+                margin-bottom: 15px;
+                .product_card{
+                    border-radius: 8px;
+                    box-shadow: 3px 4px 16px black;
+                    .image{
+                        border-radius: 8px;
+                        text-align: center;
+                        img{
+                            height: 130px;                            
+                        }
+                    }
+                    .card_body{
+                        padding: 6px 8px;
+                        h1{
+                            font-size: 1em;
+                            text-align: left;
+                            text-transform: unset;
+                            color: #000000;
+                        }
+                    }
+                    .footer{
+                        border-top: 1px solid #000000;
+                        display: flex;
+                        justify-content: space-evenly;
+                        padding: 4px 8px;
+                    }
                 }
             }
         }
