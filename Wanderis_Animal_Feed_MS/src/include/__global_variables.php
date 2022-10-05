@@ -1,6 +1,6 @@
 <?php
-$app_name = "App";
-$app_full_name  = "Application_Name";
-$app_slogan = "Some_Slogan";
+$app_name = "WAFMS";
+$app_full_name  = "Wanderi's Animal Feed MS";
+$app_slogan = "Best animal feeds at an affordable price.";
 
-$db_name = "db_web_framework";
+$db_name = "db_wanderis_animal_feed_ms";
