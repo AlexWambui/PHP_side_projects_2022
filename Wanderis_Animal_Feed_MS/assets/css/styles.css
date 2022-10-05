@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.linear_gradient {
+  background: linear-gradient(rgba(29, 38, 113, 0.9), rgba(195, 55, 100, 0.9));
+  color: #fff;
+}
+
+.img_linear_gradient_bg {
+  background: #C33764; /* fallback colour. Make sure this is just one solid colour. */
+  background: -webkit-linear-gradient(rgba(29, 38, 113, 0.9), rgba(195, 55, 100, 0.9)), url("../images/system_images/hero-section.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.setup_error {
+  margin-top: 20%;
+  padding: 4px 5%;
+}
+.setup_error h1 {
+  font-size: 2em;
+  color: red;
+  text-align: center;
+}
+.setup_error p {
+  font-size: 1.5em;
+  font-style: italic;
+}
+.setup_error ul {
+  list-style-position: inside;
+}
+.setup_error a {
+  background: orange;
+  text-decoration: none;
+  padding: 8px 32px;
+  border-radius: 16px;
+}
+
+@media screen and (min-width: 720px) {
+  .setup_error {
+    width: 60%;
+    margin: 10% auto auto;
+  }
+}
+.Home .home_navbar {
+  height: 10vh;
+  background: rgba(46, 57, 156, 0.9);
+  border-bottom: 1px solid #888888;
+}
+.Home .home_navbar .navbar {
+  width: 90%;
+  margin: auto;
+}
+.Home .home_navbar .navbar .logo {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fafafa;
+  text-transform: uppercase;
+}
+.Home .home_navbar .navbar .nav_links ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.Home .home_navbar .navbar .nav_links ul li {
+  margin: 9%;
+}
+.Home .home_navbar .navbar .nav_links ul li a {
+  text-decoration: none;
+  color: #fafafa;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+.Home .hero_section {
+  width: 100vw;
+  height: 85vh;
+  overflow: hidden;
+  background: #000000;
+  background: -webkit-linear-gradient(rgba(46, 57, 156, 0.9), rgba(238, 58, 115, 0.9)), url("../images/system_images/hero-section.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fafafa;
+}
+.Home .hero_section .app_details h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fafafa;
+}
+.Home .hero_section .app_details h2 {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  color: rgb(223, 217, 217);
+}
+.Home .footer {
+  height: 5vh;
+  line-height: 5vh;
+  text-align: center;
+}
+
+.authentication_form {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.authentication_form .container {
+  border: 1px solid black;
+  border-radius: 6px;
+}
+.authentication_form .container .header {
+  border-radius: 6px;
+  background: rgb(0, 0, 0);
+  text-align: center;
+  color: white;
+  padding: 5px 10px;
+  margin-top: -3%;
+}
+.authentication_form .container .header h1 {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.authentication_form .container .body {
+  width: 97%;
+  margin: 2% auto;
+}
+.authentication_form .container .body .password_field {
+  position: relative;
+}
+.authentication_form .container .body .icon-eye {
+  position: absolute;
+  cursor: pointer;
+  margin-top: -27px;
+}
+
+.Login .container {
+  width: 30%;
+}
+.Login .container .body .icon-eye {
+  right: 38%;
+}
+
+.Signup .container {
+  width: 60%;
+}
+.Signup .container .body .icon-eye {
+  right: 24%;
+}
+
+aside {
+  background: black;
+  color: #fafafa;
+  width: 15%;
+  height: 100vh;
+  position: relative;
+  position: fixed;
+  display: block;
+  padding: 2% 1.5%;
+}
+aside h1 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-style: italic;
+  margin-bottom: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: #dddbdb;
+}
+aside ul {
+  list-style: none;
+}
+aside ul li {
+  margin: 1% auto;
+  border-bottom: 1px solid #fafafa;
+}
+aside ul li a {
+  color: #fafafa;
+  text-decoration: none;
+  display: block;
+  margin-left: 4px;
+}
+aside ul li a:hover {
+  text-decoration: none;
+  margin-left: 12px;
+  color: greenyellow;
+}
+aside .account_details {
+  position: absolute;
+  bottom: 3%;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+aside .account_details ul li {
+  border-bottom: unset;
+}
+aside .account_details ul li .logout_btn {
+  border: none;
+  border-radius: 32px;
+  padding: 4px 32px;
+  background: red;
+  color: white;
+  font-weight: bold;
+}
+aside .account_details ul li .logout_btn:hover {
+  background: rgb(168, 8, 8);
+}
+
+main {
+  margin-left: 15%;
+  width: 85%;
+}
+
+.Dashboard .container {
+  padding: 2%;
+}
+.Dashboard .container .statistics {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 1em;
+}
+.Dashboard .container .statistics .statistic {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: black;
+  color: #fafafa;
+  box-shadow: 4px 6px 4px rgb(119, 60, 60);
+}
+.Dashboard .container .statistics .statistic .details {
+  padding: 2% 1px;
+}
+.Dashboard .container .statistics .statistic .details h1 {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.Dashboard .container .statistics .statistic .details p {
+  margin: unset;
+}
+.Dashboard .container .statistics .statistic span {
+  font-size: 2.5em;
+}/*# sourceMappingURL=styles.css.map */
