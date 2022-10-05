@@ -7,7 +7,7 @@
         <?php if ($_SESSION['user_level'] == 3): ?>
             <li><a href="users.php"><span class="icon-users"></span> Users</a></li>
         <?php endif; ?>
-        <li><a href="services.php"><span class="icon-shopping-cart"></span> Products</a></li>
+        <li><a href="products.php"><span class="icon-shopping-cart"></span> Products</a></li>
         <li><a href="billings.php"><span class="icon-money"></span> Billings</a></li>
     </ul>
     <div class="account_details">
