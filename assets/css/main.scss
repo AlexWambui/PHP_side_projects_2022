@@ -220,6 +220,7 @@ $navbar_width: 14%;
         .container{
             border-radius: 16px;
             background: $golden_color;
+            box-shadow: 4px 6px 10px black;
         }
         .stats{
             $measurement: 300px;

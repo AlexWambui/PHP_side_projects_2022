@@ -34,3 +34,9 @@ function update_user()
     setcookie('success', 'Updated Successfully!', time() + 2);
     header('location: users.php');
 }
+
+function delete_user() {
+        delete('users');
+        setcookie("success", "User has been deleted 😮.", time() + 2);
+        header('location: ./users.php');
+}

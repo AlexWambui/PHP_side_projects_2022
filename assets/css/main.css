@@ -211,6 +211,7 @@ aside .login_controls .logout_btn {
 .dashboard .container {
   border-radius: 16px;
   background: #FCC201;
+  box-shadow: 4px 6px 10px black;
 }
 .dashboard .stats {
   border: 10px solid #FCC201;

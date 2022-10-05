@@ -23,13 +23,13 @@ include_once "include/sidenav.php"
                                                                 <h6><?= count_all_rows("bookings") ?> Booking(s)</h6>
                                                         </div>
                                                         <div class="col">
-                                                                <h6 class="text-warning"><?= count_pending_bookings() ?> Pending</h6>
+                                                                <h6 class="text-warning text-center"><?= count_pending_bookings() ?> Pending</h6>
                                                         </div>
                                                         <div class="col">
-                                                                <h6 class="text-success"><?= count_approved_bookings() ?> Approved</h6>
+                                                                <h6 class="text-success text-center"><?= count_approved_bookings() ?> Approved</h6>
                                                         </div>
                                                         <div class="col">
-                                                                <h6 class="text-danger"><?= count_cancelled_bookings() ?> Rejected</h6>
+                                                                <h6 class="text-danger text-center"><?= count_cancelled_bookings() ?> Rejected</h6>
                                                         </div>
                                                         <?php endif; ?>
                                                 </div>

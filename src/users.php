@@ -1,13 +1,14 @@
 <?php
 include_once "include/_include_authenticated_essentials.php";
 include_once "include/_users.php";
+if(isset($_POST['delete_user'])) delete_user();
 start_html("Users");
 include_once "include/sidenav.php" 
 ?>
 <section class="container main_content users">
         <div class="container">
                 <div class="row justify-content-center">
-                        <div class="col-10 mt-3">
+                        <div class="col-12 mt-3">
                                 <?= alert() ?>
                                 <div class="card">
                                 <div class="card-header">
@@ -50,10 +51,11 @@ include_once "include/sidenav.php"
                                                         </div>
                                                         |
                                                         <div class="col d-flex justify-content-center">
-                                                                <form action="./users.php" method="post" class="form-inline">
-                                                                <input type="hidden" name="delete_user_id" id="delete_user_id" value="<?= $users['id'] ?>">
-                                                                <button type="submit" name="delete_user" class="btn btn-sm"><span class="text-danger table_icons icon-trash" onclick="return confirm_delete()"></span> Delete</button>
-                                                                </form>
+                                                        <form action="./users.php" method="post">
+                                                                <input type="hidden" name="delete_id" value="<?= $user['id'] ?>">
+                                                                <button class="btn" type="submit" name="delete_user" onclick="return confirm_delete()"><span class="text-danger table-icons icon-trash"> Delete</span></button>                                                                                                         
+                                                        </form>
+                                                                <!-- <a href="users.php?id=$user['id']"><span class='icon icon-trash text-danger'></span><input type='submit' value='Delete' class='btn btn-sm' onclick='return confirm_delte()'></a> -->
                                                         </div>
                                                         </div>
                                                 </td>
