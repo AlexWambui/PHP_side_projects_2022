@@ -1,4 +1,6 @@
 <?php
+include_once "include/functions.php";
+
 function add_product()
 {
     global $db_connection;
@@ -27,26 +29,35 @@ function add_product()
     header('location: ./products.php');
 }
 
-function update_meal()
+function update_product()
 {
     global $db_connection;
 
     $id = $_REQUEST['update_id'];
     $category = $_REQUEST['category'];
-    $meal_name = $_REQUEST['meal_name'];
+    $product_name = $_REQUEST['product_name'];
     $price = $_REQUEST['price'];
 
-    $sql_update_meal = mysqli_prepare($db_connection, "UPDATE meals SET `meal_name` = '$meal_name', `category` = '$category', `price` = '$price' WHERE id = '$id' ");
-    mysqli_stmt_execute($sql_update_meal) or die(mysqli_stmt_error($sql_update_meal));
-    setcookie('success', 'Meal updated successfully 😉.', time() + 2);
-    header('location: ./meals.php');
+    $sql_update = mysqli_prepare($db_connection, "UPDATE products SET `category` = '$category', `product_name` = '$product_name', `price` = '$price' WHERE id = '$id' ");
+    mysqli_stmt_execute($sql_update) or die(mysqli_stmt_error($sql_update));
+    setcookie('success', 'Product updated successfully 😉.', time() + 2);
+    header('location: ./products.php');
 }
 
-function delete_meal()
+function delete_product()
 {
-    delete('meals');
-    setcookie("success", "Meal has been deleted 😮.", time() + 2);
-    header('location: ./meals.php');
+    delete('products');
+    setcookie("success", "Product has been deleted 😮.", time() + 2);
+    header('location: ./products.php');
+}
+
+function interpret_category($category)
+{
+    $category;
+    if ($category == 1) echo 'Poultry';
+    else if ($category == 2) echo 'Cattle';
+    else if ($category == 3) echo 'Dog';
+    else echo 'Cat';
 }
 
 function fetch_category($category_name): mysqli_result|bool
@@ -55,6 +66,15 @@ function fetch_category($category_name): mysqli_result|bool
 
     $sql_fetch_category = $db_connection->query("SELECT * FROM products WHERE category = '$category_name' ") or die(mysqli_error($db_connection));
     return $sql_fetch_category;
+}
+
+function fetch_product(): array
+{
+    global $db_connection;
+    $id = $_REQUEST['update_id'];
+
+    $fetched_record = $db_connection->query("SELECT * FROM products WHERE id = '$id' ") or die($db_connection);
+    return mysqli_fetch_all($fetched_record, 1);
 }
 
 function select_meal_options(): string
@@ -84,6 +104,12 @@ function product_card($title, $category){
                             </div>
                             <div class="footer">
                                 <div class="action_button">
+                                    <form action="./sell.php">
+                                        <input type="hidden" name="update_id" value="<?= $product['id'] ?>">
+                                        <button type="submit" name="sell" class="action_btn btn btn-sm">Sell</button>
+                                    </form>
+                                </div>
+                                <div class="action_button">
                                     <form action="./update_product.php" method="post">
                                         <input type="hidden" name="update_id" value="<?= $product['id'] ?>">
                                         <button type="submit" name="update" class="btn btn-success btn-sm"><span class="icon icon-pencil"></span></button>
@@ -92,7 +118,7 @@ function product_card($title, $category){
                                 <div class="action_button">
                                     <form action="./products.php" method="post">
                                         <input type="hidden" name="delete_id" value="<?= $product['id'] ?>">
-                                        <button type="submit" name="delete" class="btn btn-danger btn-sm"><span class="icon-trash"></span></button>
+                                        <button type="submit" name="delete" class="btn btn-danger btn-sm" onclick="return confirm_delete()"><span class="icon-trash"></span></button>
                                     </form>
                                 </div>
                             </div>

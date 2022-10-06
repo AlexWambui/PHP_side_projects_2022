@@ -5,6 +5,7 @@ include_once "include/functions.php";
 include_once "_products.php";
 ensure_user_logged_in();
 if(isset($_POST['add_product'])) add_product();
+if(isset($_POST['delete'])) delete_product();
 start_html("Products"); 
 include_once "include/sidenav.php";
 ?>
@@ -71,20 +72,22 @@ include_once "include/sidenav.php";
                     </div>                    
                 </div>                         
                 <div class="nav_links"> 
-                    <p>2 Product(s)</p>    
+                    <p><?= count_all('products') ?> Product(s)</p>    
                     <a href="" class="btn btn-success btn-rounded" data-toggle="modal"
                     data-target="#modalAddProduct"><span class="icon icon-add"></span> New Product</a>               
                 </div>                
             </div>
         </div>
-        <div class="products_list">
+        <div class="products_list">            
             <?php 
-                product_card('Chicken', 1);
-                product_card('Cattle', 2);
-                product_card('Dog', 3);
-                product_card('Cat', 4);
+                alert();
+                product_card('Chicken Feed', 1);
+                product_card('Cattle Feed', 2);
+                product_card('Dog Feed', 3);
+                product_card('Cat Feed', 4);
             ?>
         </div>
     </div>
 </main>
+<script src="../assets/js/confirm_delete.js"></script>
 <?php end_html(); ?>
