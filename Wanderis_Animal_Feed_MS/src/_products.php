@@ -102,6 +102,7 @@ function product_card($title, $category){
                                 <h1><?= $product['product_name'] ?></h1>
                                 <p>Price (per kg): <?= $product['price'] ?> /=</p>
                             </div>
+                            <?php if($_SESSION['user_level'] !=1 ): ?>
                             <div class="footer">
                                 <div class="action_button">
                                     <form action="./sell.php">
@@ -122,6 +123,7 @@ function product_card($title, $category){
                                     </form>
                                 </div>
                             </div>
+                            <?php endif; ?>
                         </div>
                     <?php endforeach; ?>
                 </div>
