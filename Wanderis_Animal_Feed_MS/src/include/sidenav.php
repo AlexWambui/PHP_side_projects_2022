@@ -8,7 +8,8 @@
             <li><a href="users.php"><span class="icon-users"></span> Users</a></li>
         <?php endif; ?>
         <li><a href="products.php"><span class="icon-shopping-cart"></span> Products</a></li>
-        <li><a href="billings.php"><span class="icon-money"></span> Billings</a></li>
+        <li><a href="sales.php"><span class="icon-money"></span> Sales</a></li>
+        <li><a href="reports.php"><span class="icon-file"></span> Reports</a></li>
     </ul>
     <div class="account_details">
         <ul>
