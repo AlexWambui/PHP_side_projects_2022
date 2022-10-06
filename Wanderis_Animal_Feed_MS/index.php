@@ -39,6 +39,23 @@ include_once "src/include/functions.php"
                 <h1><?= $app_full_name ?></h1>
                 <h2><?= $app_slogan ?></h2>
             </div>
+            <div class="app_stats">
+                <div class="stat">
+                    <span class="icon icon-users"></span>
+                    <h1><?= count_all('users') ?></h1>
+                    <h2>Users</h2>
+                </div>
+                <div class="stat">
+                    <span class="icon icon-shopping-cart"></span>
+                    <h1><?= count_all('products') ?></h1>
+                    <h2>Products</h2>
+                </div>
+                <div class="stat">
+                    <span class="icon icon-money"></span>
+                    <h1><?= count_all('sales') ?></h1>
+                    <h2>Sales</h2>
+                </div>
+            </div>
         </div>
         <div class="footer">
             <p>copyright&copy;2022. All right reserved.</p>
