@@ -2,6 +2,7 @@
 include_once "include/_html_templates.php";
 include_once "include/_authenticate.php";
 include_once "include/functions.php";
+include_once "_sales.php";
 ensure_user_logged_in();
 start_html("Dashboard"); 
 include_once "include/sidenav.php";
@@ -12,25 +13,22 @@ include_once "include/sidenav.php";
                 <div class="statistic">
                     <div class="details">
                         <h1>Users</h1>
-                        <p>Total: 54</p>
+                        <p>Total: <?= count_all('users') ?></p>
                     </div>
                     <span class="icon icon-users"></span>
                 </div>
                 <div class="statistic">
                     <div class="details">
                         <h1>Products</h1>
-                        <p>Total: 54</p>
-                        <p>Pending: 5</p>
-                        <p>Approved: 6</p>
+                        <p>Total: <?= count_all('products') ?></p>
                     </div>
                     <span class="icon icon-shopping-cart"></span>
                 </div>
                 <div class="statistic">
                     <div class="details">
-                        <h1>Billings</h1>
-                        <p>Total: 54</p>
-                        <p>Paid: 5</p>
-                        <p>Pending: 5</p>
+                        <h1>Sales</h1>
+                        <p>Total: <?= count_all('sales') ?></p>
+                        <p>Amount: <?= total_sales() ?> /=</p>
                     </div>
                     <span class="icon icon-money"></span>
                 </div>
