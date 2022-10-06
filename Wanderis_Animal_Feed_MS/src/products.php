@@ -11,6 +11,7 @@ include_once "include/sidenav.php";
 ?>
 <main class="Products">
     <div class="container">
+    <?php if($_SESSION['user_level'] != 1): ?>
         <div class="nav">
             <div class="product_button text-right">
                 <div class="modal fade text-dark" id="modalAddProduct" tabindex="-1" role="dialog"
@@ -78,7 +79,8 @@ include_once "include/sidenav.php";
                 </div>                
             </div>
         </div>
-        <div class="products_list">            
+        <?php endif; ?>
+        <div class="products_list <?php if($_SESSION['user_level'] != 1) echo 'marginated' ?>">            
             <?php 
                 alert();
                 product_card('Chicken Feed', 1);
