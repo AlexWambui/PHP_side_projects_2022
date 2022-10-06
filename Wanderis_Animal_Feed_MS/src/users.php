@@ -17,7 +17,7 @@ include_once "include/sidenav.php"
                                 <div class="card-header">
                                         <div class="row">
                                         <div class="col">
-                                                <h6> User(s)</h6>
+                                                <h6><?= count_all('users') ?> User(s)</h6>
                                         </div>
                                         </div>
                                 </div>
@@ -46,20 +46,19 @@ include_once "include/sidenav.php"
                                                 </td>
                                                 <td>
                                                         <div class="row">
-                                                        <div class="col d-flex justify-content-center">
-                                                                <form action="update_user.php" method="post" class="form-inline">
-                                                                <input type="hidden" name="update_id" value="<?= $user['id']; ?>">
-                                                                <button class="btn btn-sm" type="submit" name="edit_user"><span class="text-success table-icons icon-pencil"></span> Update</button>
-                                                                </form>
-                                                        </div>
-                                                        |
-                                                        <div class="col d-flex justify-content-center">
-                                                        <form action="./users.php" method="post">
-                                                                <input type="hidden" name="delete_id" value="<?= $user['id'] ?>">
-                                                                <button class="btn" type="submit" name="delete_user" onclick="return confirm_delete()"><span class="text-danger table-icons icon-trash"> Delete</span></button>                                                                                                         
-                                                        </form>
-                                                                <!-- <a href="users.php?id=$user['id']"><span class='icon icon-trash text-danger'></span><input type='submit' value='Delete' class='btn btn-sm' onclick='return confirm_delte()'></a> -->
-                                                        </div>
+                                                                <div class="col d-flex justify-content-center">
+                                                                        <form action="update_user.php" method="post" class="form-inline">
+                                                                        <input type="hidden" name="update_id" value="<?= $user['id']; ?>">
+                                                                        <button class="btn btn-sm" type="submit" name="edit_user"><span class="text-success table-icons icon-pencil"></span> Update</button>
+                                                                        </form>
+                                                                </div>
+                                                                |
+                                                                <div class="col d-flex justify-content-center">
+                                                                        <form action="./users.php" method="post">
+                                                                                <input type="hidden" name="delete_id" value="<?= $user['id'] ?>">
+                                                                                <button class="btn" type="submit" name="delete_user" onclick="return confirm_delete()"><span class="text-danger table-icons icon-trash"> Delete</span></button>                                                                                                         
+                                                                        </form>                                                                
+                                                                </div>
                                                         </div>
                                                 </td>
                                                 </tr>
@@ -72,11 +71,7 @@ include_once "include/sidenav.php"
                 </div>
                 </div>
         </main>
-<script>
-        function confirm_delete(){
-                return confirm('Are you sure you want to delete this record?');              
-        }
-</script>
+<script src="../assets/js/confirm_delete.js"></script>
 <?php
 data_table();
 end_html();
