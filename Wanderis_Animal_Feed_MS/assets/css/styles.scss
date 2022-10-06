@@ -59,7 +59,7 @@
     .Home{
         .home_navbar{
             height: 10vh;
-            background: rgba(46, 57, 156, 0.9);
+            background: rgba(0, 0, 0, 0.9);
             border-bottom: 1px solid #888888;
             .navbar{
                 width: 90%;
@@ -98,7 +98,7 @@
                 height: 85vh;
                 overflow: hidden;
                 background: #000000;
-                background: -webkit-linear-gradient(rgba(46, 57, 156, 0.9), rgba(238, 58, 115, 0.9)), url("../images/system_images/hero-section.jpg");
+                background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(238, 58, 115, 0.5)), url("../images/system_images/hero-section.jpg");
                 background-repeat: no-repeat;
                 background-size: cover;
                 background-position: center;
@@ -119,6 +119,25 @@
                         font-style: italic;
                         text-align: center;
                         color: rgb(223, 217, 217);
+                    }
+                }
+                .app_stats{
+                    display: grid;
+                    grid-template-columns: auto auto auto;
+                    width: 80%;
+                    margin-top: 4%;
+                    .stat{
+                        margin: auto 2%;
+                        padding: 6px 0;
+                        text-align: center;                        
+                        span{
+                            font-size: 2.5em;
+                        }
+                        h2{
+                            font-size: 1.2em;
+                            text-transform: uppercase;
+                            font-weight: bold;
+                        }
                     }
                 }
             }
@@ -289,9 +308,13 @@ main{
     }
 }
 
+
+$nav_height: 8vh;
+.marginated{
+    margin-top: $nav_height;
+}
 .Products{
-    .container{
-        $nav_height: 8vh;
+    .container{         
         .nav{  
             .nav_links{                
                 display: flex;
@@ -312,8 +335,7 @@ main{
                 }
             }
         }
-        .products_list{
-            margin-top: $nav_height;
+        .products_list{                       
             h1{
                 font-size: 1.2em;
                 text-align: center;
