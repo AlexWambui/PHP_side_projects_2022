@@ -100,6 +100,13 @@ function update_record()
     header('location: ./_page.php');
 }
 
+function delete($table_name){
+    global $db_connection;
+
+    $id = $_REQUEST['delete_id'];
+    $sql_delete = $db_connection->query("DELETE FROM $table_name WHERE id = '$id' ") or die($db_connection);
+}
+
 function delete_record()
 {
     global $db_connection;
