@@ -16,10 +16,10 @@ include_once "include/sidenav.php";
                 <div class="card">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col">
+                            <div class="col text-center">
                                 <h6><?= count_sales_today() ?> Sale(s) Today.</h6>
                             </div>
-                            <div class="col text-right text-success">
+                            <div class="col text-center text-success">
                                 <h6>Amount: <?= sales_today() ?> /=</h6>
                             </div>
                         </div>
