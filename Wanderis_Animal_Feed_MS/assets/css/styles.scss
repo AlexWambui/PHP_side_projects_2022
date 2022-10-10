@@ -342,10 +342,12 @@ $nav_height: 8vh;
                 text-transform: uppercase;
                 font-weight: bold;
                 color: green;
+                border-top: 2px solid black;
+                border-bottom: 2px solid black;
             }
             .category{
                 display: grid;
-                grid-template-columns: auto auto auto auto auto;
+                grid-template-columns: auto auto auto auto;
                 grid-gap: 15px;
                 margin-bottom: 15px;
                 .product_card{
@@ -365,10 +367,11 @@ $nav_height: 8vh;
                             text-align: left;
                             text-transform: unset;
                             color: #000000;
+                            border: none;
                         }
                     }
                     .footer{
-                        border-top: 1px solid #000000;
+                        border-top: 1px solid #706f6f;
                         display: flex;
                         justify-content: space-evenly;
                         padding: 4px 8px;
