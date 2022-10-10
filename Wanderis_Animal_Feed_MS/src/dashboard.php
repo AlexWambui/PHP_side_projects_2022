@@ -24,6 +24,7 @@ include_once "include/sidenav.php";
                     </div>
                     <span class="icon icon-shopping-cart"></span>
                 </div>
+                <?php if($_SESSION['user_level'] != 1): ?>
                 <div class="statistic">
                     <div class="details">
                         <h1>Sales</h1>
@@ -32,6 +33,7 @@ include_once "include/sidenav.php";
                     </div>
                     <span class="icon icon-money"></span>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
 </main>
